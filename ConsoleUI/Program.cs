@@ -17,7 +17,7 @@ namespace ConsoleUI
             //ColorTest(colorService);
             //BrandTest(brandService);
 
-            foreach (var carDto in carService.GetCarDetails())
+            foreach (var carDto in carService.GetCarDetails().Data)
             {
                 Console.WriteLine("{0} - {1} - {2} - {3}", carDto.CarName, carDto.BrandName, carDto.ColorName, carDto.DailyPrice);
             }
@@ -26,14 +26,14 @@ namespace ConsoleUI
 
         private static void BrandTest(IBrandService brandService)
         {
-            foreach (var brand in brandService.GetAll())
+            foreach (var brand in brandService.GetAll().Data)
             {
                 Console.WriteLine("{0}   {1}", brand.Id, brand.Name);
             }
             //brandService.Add(new Brand() { Name = "Ford" });
             //brandService.Update(new Brand() { Id = 1002, Name = "Mercedes" });
             brandService.Delete(new Brand() { Id = 1002, Name = "Mercedes" });
-            foreach (var brand in brandService.GetAll())
+            foreach (var brand in brandService.GetAll().Data)
             {
                 Console.WriteLine("{0}   {1}", brand.Id, brand.Name);
             }
@@ -41,7 +41,7 @@ namespace ConsoleUI
 
         private static void ColorTest(IColorService colorService)
         {
-            foreach (var color in colorService.GetAll())
+            foreach (var color in colorService.GetAll().Data)
             {
                 Console.WriteLine(color.Id + "  " + color.Name);
             }
@@ -50,7 +50,7 @@ namespace ConsoleUI
             //colorService.Add(new Color() { Name = "Kırmızı" });
             //colorService.Update(new Color() { Id = 1002, Name = "Mavi" });
             colorService.Delete(new Color() { Id = 1002, Name = "Mavi" });
-            foreach (var color in colorService.GetAll())
+            foreach (var color in colorService.GetAll().Data)
             {
                 Console.WriteLine(color.Id + "  " + color.Name);
             }
@@ -59,7 +59,7 @@ namespace ConsoleUI
         private static void CarTest(ICarService carService)
         {
             Console.WriteLine("GetAll");
-            foreach (var car in carService.GetCarsByColordId(2))
+            foreach (var car in carService.GetCarsByColordId(2).Data)
             {
                 Console.WriteLine(car.Id + " - " + car.Description + " - " + car.ModelYear.Year + " - " + car.DailyPrice);
             }
@@ -104,7 +104,7 @@ namespace ConsoleUI
             Console.WriteLine("Update");
             carService.Update(new Car() { Id = 1, BrandId = 1, ColorId = 1, Name = "2021 Audi A4 Sedan", DailyPrice = 2070108, ModelYear = new DateTime(2021, 1, 1), Description = "2023 Audi A4 Sedan. Bu arabayı kaçırma!!!!!!!!!!!" });
             Console.WriteLine("GetAll");
-            foreach (var car in carService.GetAll())
+            foreach (var car in carService.GetAll().Data)
             {
                 Console.WriteLine(car.Id + " - " + car.Description + " - " + car.ModelYear.Year + " - " + car.DailyPrice);
             }
@@ -112,7 +112,7 @@ namespace ConsoleUI
             Console.WriteLine();
             Console.WriteLine("GetById");
             var result = carService.GetById(1);
-            Console.WriteLine(result.Id + " - " + result.Description + " - " + result.ModelYear.Year + " - " + result.DailyPrice);
+            Console.WriteLine(result.Data.Id + " - " + result.Data.Description + " - " + result.Data.ModelYear.Year + " - " + result.Data.DailyPrice);
         }
     }
 }
