@@ -13,15 +13,32 @@ namespace ConsoleUI
             ICarService carService = new CarManager(new EfCarDal());
             IColorService colorService = new ColorManager(new EfColorDal());
             IBrandService brandService = new BrandManager(new EfBrandDal());
+            IUserService userService = new UserManager(new EfUserDal());
+            //ICustomerService customerService = new CustomerManager(new EfCustomerDal());
+            IRentalService rentalService = new RentalManager(new EfRentalDal());
+
             //CarTest(carService);
             //ColorTest(colorService);
             //BrandTest(brandService);
+            //CarDetailsTest(carService);
 
+            var result = rentalService.Add(new Rental()
+            {
+                CarId = 1,
+                CustomerId = 1,
+                RentDate = DateTime.Now
+            });
+            Console.WriteLine(result.Message);
+
+
+        }
+
+        private static void CarDetailsTest(ICarService carService)
+        {
             foreach (var carDto in carService.GetCarDetails().Data)
             {
                 Console.WriteLine("{0} - {1} - {2} - {3}", carDto.CarName, carDto.BrandName, carDto.ColorName, carDto.DailyPrice);
             }
-
         }
 
         private static void BrandTest(IBrandService brandService)
