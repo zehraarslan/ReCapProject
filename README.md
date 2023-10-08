@@ -1,7 +1,7 @@
 # ReCapProject
 
 Proje Hakkında
-ReCapProject, C# ve .NET Core teknolojileri kullanılarak geliştirilmiş bir projedir. Bu proje, temel CRUD (Create, Read, Update, Delete) işlemlerinin nasıl gerçekleştirileceğini gösterir.
+ReCapProject, C# ve .NET Core teknolojileri kullanılarak geliştirmekte olduğum bir projedir. Bu proje, temel CRUD (Create, Read, Update, Delete) işlemlerinin nasıl gerçekleştirileceğini gösterir.
 
 Kurulum
 Projeyi kurmak için aşağıdaki adımları izleyin:
@@ -16,8 +16,8 @@ Kullanım
 Proje, temel CRUD işlemlerini göstermek için tasarlanmıştır. Bu işlemleri gerçekleştirmek için, ilgili kod parçalarını çalıştırmak yeterlidir.
 
 Örneğin, bir öğeyi oluşturmak için CreateItem fonksiyonunu kullanabilirsiniz:
-
-CreateItem(new Item { Name = "New Item", Description = "This is a new item" });
+    CreateItem(new Item { Name = "New Item", Description = "This is a new item" });
+  
 Bu kod parçası, ismi "New Item" ve açıklaması "This is a new item" olan yeni bir öğe oluşturur.
 
 Katkıda Bulunma
