@@ -5,10 +5,9 @@ ReCapProject, C# ve .NET Core teknolojileri kullanılarak geliştirmekte olduğu
 
 # Kurulum
 Projeyi kurmak için aşağıdaki adımları izleyin:
-
-İlk önce, projeyi GitHub deposundan klonlayın: git clone https://github.com/zehraarslan/ReCapProject.git
-Dizin içerisine gidin: cd ReCapProject
-Projeyi build edin: dotnet build
+- İlk önce, projeyi GitHub deposundan klonlayın: git clone https://github.com/zehraarslan/ReCapProject.git
+- Dizin içerisine gidin: cd ReCapProject
+- Projeyi build edin: dotnet build
 
 # Kullanım
 Proje, temel CRUD işlemlerini göstermek için tasarlanmıştır. Bu işlemleri gerçekleştirmek için, ilgili kod parçalarını çalıştırmak yeterlidir.
